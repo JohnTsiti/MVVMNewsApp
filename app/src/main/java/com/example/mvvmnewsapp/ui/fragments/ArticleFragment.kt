@@ -29,7 +29,7 @@ class ArticleFragment : Fragment() {
 
         binding.webView.apply {
             webViewClient = WebViewClient()
-            loadUrl(article.url)
+            article.url?.let { loadUrl(it) }
         }
 
         binding.fab.setOnClickListener {
